@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISTL INVENTORY</title>
+  <link rel="shortcut icon" href="favicon.io.avif" type="iscientific logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      background-color: #fff;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin: 40px;
+      padding: 20px;
+      transition: transform 0.3s ease-out;
+      transform: translateY(-100px);
+    }
+
+    .header.loaded {
+      transform: translateY(0);
+    }
+
+    .navbar {
+      width: 85%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 35px;
+      cursor: pointer;
+    }
+
+    .company-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-right: 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar ul li {
+      position: relative;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #eee;
+    }
+
+    .navbar ul li::after {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #009688;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .navbar ul li:hover::after {
+      width: 100%;
+    }
+
+    /* Updated styles */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-icon {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 10px;
+      color: #009688;
+      transition: color 0.3s;
+    }
+
+    .dropdown:hover .dropdown-icon {
+      color: #555;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 200px;
+      padding: 20px;
+      border-radius: 5px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #333;
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      color: #009688;
+      font-weight: bold;
+    }
+    
+    /* Additional customizations */
+    .dropdown-content a:first-child {
+      margin-top: 10px;
+    }
+    
+    .dropdown-content strong {
+      display: block;
+      margin-top: 10px;
+      color: #009688;
+      font-weight: bold;
+    }
+    
+    .dropdown-content a:not(:first-child),
+    .dropdown-content strong {
+      margin-left: 20px;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header" id="header">
+    <div class="navbar">
+      <img src="" alt="Logo" class="logo">
+      <h1 class="company-name">ISTL INVENTORY</h1>
+      <div class="dropdown">
+        <i class="dropdown-icon" onclick="toggleDropdown(event)">&#9776;</i>
+        <div id="dropdown-content" class="dropdown-content">
+          <a href="#">Home</a>
+          <strong>Forms:</strong>
+          <a href="#"> Categories</a>
+          <a href="#"> Subcategories</a>
+          <a href="#"> Items</a>
+          <strong>Edit:</strong>
+          <a href="#"> Categories</a>
+          <a href="#"> Subcategories</a>
+          <a href="#"> Items</a>
+          <a href="#"> Remove</a>
+          <a href="#"> Add</a>
+          <a href="#"> Activity Log</a>
+          <a href="#"> Activity Display</a>
+          <a href="#"> Excel Convert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(event) {
+      var dropdownContent = document.getElementById("dropdown-content");
+      dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+      event.stopPropagation();
+    }
+
+    window.addEventListener('click', function(e) {
+      var dropdownContent = document.getElementById("dropdown-content");
+      if (dropdownContent.style.display === 'block' && e.target.className !== 'dropdown-icon') {
+        dropdownContent.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('load', function() {
+      var header = document.getElementById("header");
+      header.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>
+ 

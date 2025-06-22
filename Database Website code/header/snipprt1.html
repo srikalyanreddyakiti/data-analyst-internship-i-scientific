@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Dropdown</title>
+    <style>
+        /* CSS styles for the responsive navbar with dropdown */
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-bar {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar li {
+  margin-left: 15px;
+}
+
+.nav-link {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown ul {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 10px;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-link .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.dropdown-link-title {
+  font-weight: bold;
+}
+
+.dropdown-link p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.dropdown-title {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-start,
+  .nav-end {
+    display: none;
+  }
+  
+  .menu-bar {
+    justify-content: center;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+  }
+  
+  .dropdown {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    min-width: auto;
+  }
+  
+  .dropdown ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .dropdown-link .icon {
+    margin-right: 5px;
+  }
+  
+  .dropdown-link p {
+    display: none;
+  }
+  
+  .dropdown-title {
+    display: none;
+  }
+  
+  .dropdown-btn[aria-expanded="true"] .bx-chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header id="nav-menu" aria-label="navigation bar">
+        <div class="container">
+          <div class="nav-start">
+            <a class="logo" href="/">
+              <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/logo.png?raw=true" width="35" height="35" alt="Inc Logo" />
+            </a>
+            <nav class="menu">
+              <ul class="menu-bar">
+                <li>
+                  <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-haspopup="true" aria-expanded="false" aria-label="browse">
+                    Browse
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="dropdown1" class="dropdown">
+                    <ul role="menu">
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#best-of-the-day">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/botd.svg" class="icon" alt="Best of the day" />
+                          <div>
+                            <span class="dropdown-link-title">Best of the day</span>
+                            <p>Shorts featured today by curators</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#featured-streams">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/fs.svg" class="icon" alt="Featured Streams" />
+                          <div>
+                            <span class="dropdown-link-title">Featured Streams</span>
+                            <p>Leading creatives livestreams</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#subscriptions">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/sp.svg" class="icon" alt="Subscriptions" />
+                          <div>
+                            <span class="dropdown-link-title">Subscriptions</span>
+                            <p>Gain exclusive access</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#creative-feed">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/cf.svg" class="icon" alt="Creative Feed" />
+                          <div>
+                            <span class="dropdown-link-title">Creative Feed</span>
+                            <p>See trending creations</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+      
+                    <ul role="menu">
+                      <li class="dropdown-title">
+                        <span class="dropdown-link-title">Browse by apps</span>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#adobe-xd">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/xd.svg" class="icon" alt="Adobe XD" />
+                          <div>
+                            <span class="dropdown-link-title">Adobe XD</span>
+                            <p>Design, prototype, share</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#figma">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/figma.svg" class="icon" alt="Figma" />
+                          <div>
+                            <span class="dropdown-link-title">Figma</span>
+                            <p>Collaborative interface design</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="dropdown-link" href="#sketch">
+                          <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/sketch.svg" class="icon" alt="Sketch" />
+                          <div>
+                            <span class="dropdown-link-title">Sketch</span>
+                            <p>Design toolkit</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav-end">
+            <ul class="menu-bar">
+              <li>
+                <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-haspopup="true" aria-expanded="false" aria-label="account">
+                  Account
+                  <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="dropdown2" class="dropdown">
+                  <ul role="menu">
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#profile">
+                        <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/profile.svg" class="icon" alt="Profile" />
+                        <span class="dropdown-link-title">Profile</span>
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#settings">
+                        <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/settings.svg" class="icon" alt="Settings" />
+                        <span class="dropdown-link-title">Settings</span>
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-link" href="#logout">
+                        <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/logout.svg" class="icon" alt="Logout" />
+                        <span class="dropdown-link-title">Logout</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </header>
+
+    <script>
+       // JavaScript code for the responsive navbar with dropdown
+
+// Function to handle dropdown toggle
+function handleDropdownToggle(event) {
+  event.preventDefault();
+  const dropdownId = this.getAttribute("data-dropdown");
+  const dropdown = document.getElementById(dropdownId);
+  const expanded = this.getAttribute("aria-expanded");
+
+  if (expanded === "true") {
+    dropdown.style.display = "none";
+    this.setAttribute("aria-expanded", "false");
+  } else {
+    dropdown.style.display = "block";
+    this.setAttribute("aria-expanded", "true");
+  }
+}
+
+// Add event listeners to dropdown buttons
+const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+dropdownButtons.forEach(function (button) {
+  button.addEventListener("click", handleDropdownToggle);
+});
+
+    </script>
+</body>
+</html>

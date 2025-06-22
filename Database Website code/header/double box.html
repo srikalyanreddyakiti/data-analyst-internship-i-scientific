@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Add your CSS styles here */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.logo {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu-bar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar li {
+    position: relative;
+}
+
+.menu-bar li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+    z-index: 999;
+}
+
+.dropdown.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-link .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.dropdown-link-title {
+    font-weight: bold;
+}
+
+.dropdown-link p {
+    color: #888;
+    margin: 0;
+    font-size: 12px;
+}
+
+.dropdown-title {
+    padding: 10px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+    </style>
+</head>
+<body>
+    <header id="nav-menu" aria-label="navigation bar">
+        <div class="container">
+            <div class="nav-start">
+                <a class="logo" href="/">
+                    <img src="iscientific logo.png" width="35" height="35" alt="Inc Logo" />
+                </a>
+                <nav class="menu">
+                    <ul class="menu-bar">
+                        <li>
+                            <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-haspopup="true" aria-expanded="false" aria-label="browse">
+                                Browse
+                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="dropdown1" class="dropdown">
+                                <ul role="menu">
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#best-of-the-day">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/botd.svg" class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Best of the day</span>
+                                                <p>Shorts featured today by curators</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#featured-streams">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/fs.svg" class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Featured Streams</span>
+                                                <p>Leading creatives livestreams</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#subscriptions">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/sp.svg" class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Subscriptions</span>
+                                                <p>Gain exclusive access</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#creative-feed">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/cf.svg" class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Creative Feed</span>
+                                                <p>See trending creations</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+      
+                                <ul role="menu">
+                                    <li class="dropdown-title">
+                                        <span class="dropdown-link-title">Browse by apps</span>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#adobe-xd">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/xd.svg" />
+                                            Adobe XD
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#after-effect">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/ae.svg" />
+                                            After Effects
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#photoshop">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/ps.svg" />
+                                            Photoshop
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="nav-link">Account</button>
+                        </li>
+                        <li>
+                            <button class="nav-link">Help</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-end">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="Search">
+                    <button type="submit" class="search-button">
+                        <i class="bx bx-search" aria-label="search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Add your JavaScript code here
+const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+dropdownButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const dropdown = button.nextElementSibling;
+
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+      button.setAttribute('aria-expanded', 'false');
+    } else {
+      dropdown.classList.add('show');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+    </script>
+</body>
+</html>

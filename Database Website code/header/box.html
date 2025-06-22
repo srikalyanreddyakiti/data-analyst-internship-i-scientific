@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISTL INVENTORY</title>
+  <link rel="shortcut icon" href="favicon.io.avif" type="iscientific logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .header {
+      background-color: #fff;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin: 40px;
+      padding: 20px;
+    }
+
+    .navbar {
+      width: 85%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 35px;
+      cursor: pointer;
+    }
+
+    .company-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-right: 300px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar ul li {
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .navbar ul li::after {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #009688;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      transition: 0.5s;
+    }
+
+    .navbar ul li:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header" style="box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);">
+    <div class="navbar">
+      <img src="iscientific logo.png" alt="Logo" class="logo">
+      <h1 class="company-name">ISTL INVENTORY</h1>
+      <ul>
+        <li><a href="https://writrz.com/">Home</a></li>
+        <li><a href="https://www.pexels.com/">Bedroom</a></li>
+        <li><a href="#">Dining</a></li>
+        <li><a href="#">Kitchen</a></li>
+        <li><a href="#">Backyard</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

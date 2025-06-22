@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: ghostwhite;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        a {
+            transition: .3s all;
+        }
+
+        .container {
+            width: 1170px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            padding: 20px 0;
+            background-color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo_img {
+            width: 30px;
+        }
+
+        .header .main_menu {
+            display: flex;
+        }
+
+        .header .main_menu li a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            font-family: poppins;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+
+        .header .main_menu li {
+            position: relative;
+        }
+
+        .header .main_menu li .sub_menu {
+            position: absolute;
+            width: 180px;
+            background-color: #000;
+            visibility: hidden;
+            opacity: 0;
+            transform: translate(20px);
+            transition: all 0.3s ease;
+        }
+
+        .header .main_menu li .sub_menu li a {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+
+        .main_menu li:hover > a {
+            color: orange;
+        }
+
+        .main_menu li:hover .sub_menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sub_menu li:hover a {
+            background-color: orange;
+            color: #000;
+        }
+
+        .common_btn a {
+            padding: 10px 30px;
+            border-radius: 40px;
+            font-family: poppins;
+            font-size: 22px;
+            color: #000;
+            border: 1px solid orange;
+            text-decoration: none;
+        }
+
+        .common_btn a:hover {
+            background-color: orange;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">
+                        <img src="iscientific logo.png" alt="" class="logo_img">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="main_menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">FORMS</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">Categories</a></li>
+                                <li><a href="#">Sub Categories</a></li>
+                                <li><a href="#">Items</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">EDIT</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">Categories</a></li>
+                                <li><a href="#">Sub Categories</a></li>
+                                <li><a href="#">Items</a></li>
+                                <li><a href="#">Add</a></li>
+                                <li><a href="#">Activity</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ACTIVITY DISPLAY</a></li>
+                        <li><a href="#">EXCEL CONVERT</a></li>
+                    </ul>
+                </nav>
+                <div class="common_btn">
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

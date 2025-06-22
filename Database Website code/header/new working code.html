@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background-color: ghostwhite;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    a {
+        transition: .3s all;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .header {
+        padding: 20px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid #ccc;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo_img {
+        width: 30px;
+    }
+
+    .header .main_menu {
+        display: flex;
+    }
+
+    .header .main_menu li a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        font-family: poppins;
+        font-size: 18px;
+        padding: 10px 15px; /* Adjust the padding as needed */
+    }
+
+    .header .main_menu li {
+        position: relative;
+        white-space: nowrap; /* Prevent menu item wrapping */
+    }
+
+    .header .main_menu li .sub_menu {
+        position: absolute;
+        width: 180px;
+        background-color: #ffffff;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(20px);
+        transition: all 0.3s ease;
+    }
+
+    .header .main_menu li .sub_menu li a {
+        color: #000000;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .main_menu li:hover > a {
+        color: orange;
+    }
+
+    .main_menu li:hover .sub_menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .sub_menu li:hover a {
+        background-color: orange;
+        color: #000000;
+    }
+
+    .common_btn a {
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-family: poppins;
+        font-size: 22px;
+        color: #000;
+        border: 1px solid orange;
+        text-decoration: none;
+    }
+
+    .common_btn a:hover {
+        background-color: orange;
+        color: #000;
+    }
+
+    .search {
+        position: relative;
+    }
+
+    .search input {
+        background-color: whitesmoke;
+        border: none;
+        border-radius: 6px;
+        padding: 0.7rem;
+        padding-left: 2.4rem;
+        font-size: 16px;
+        width: 100%;
+        border: var(--border);
+    }
+
+    .search .bx-search {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        font-size: 1.3rem;
+        transform: translateY(-50%);
+        opacity: 0.6;
+    }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+
+        .header .main_menu {
+            display: none;
+        }
+
+        .header .main_menu.show {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header .main_menu.show li {
+            display: block;
+        }
+
+        .header .main_menu.show li a {
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .menu_button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            color: #fff;
+            border-radius: 50%;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu_button:hover {
+            background-color: #ff8c00;
+        }
+
+        /* Show the menu button on mobile and tablet devices */
+        .menu_button.desktop {
+            display: none;
+        }
+    }
+
+    @media (min-width: 769px) {
+        /* Hide the menu button on desktop and laptop devices */
+        .menu_button.mobile {
+            display: none;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">
+                        <img src="logo.png" alt="" class="logo_img">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="main_menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">news</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                                <li><a href="#">none</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">contact</a></li>
+                       
+                    </ul>
+                </nav>
+                <div class="search">
+                    <form role="search">
+                        <input type="search" name="search" placeholder="Search" />
+                        <i class="bx bx-search" aria-hidden="true"></i>
+                    </form>
+                </div><br>
+                <div class="common_btn">
+                    <a href="#">Login</a>
+                </div>
+                <button class="menu_button mobile">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var mainMenu = document.querySelector('.main_menu');
+            var menuButton = document.querySelector('.menu_button.mobile');
+            menuButton.addEventListener('click', function() {
+                mainMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
