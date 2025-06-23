@@ -48,5 +48,5 @@ Indicator Score = (Value - Min) / (Max - Min)
 - IoT-based sensor integration
 
 ## 👤 Developed by
-
-- A. Sri Kalyan Reddy  
+**Akiti Sri Kalyan Reddy**  
+Data Science and Artificial Intelligence  
